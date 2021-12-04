@@ -2,8 +2,17 @@
 @use "../../styles/partials/variables" as *;
 .header {
   // background-color: rgb(93, 93, 153);
-  @include flex(column, center, _);
-  height: 18.75rem;
+  @include flex(column, _, center);
+  // @include tablet {
+  //   @include flex(row, _, center);
+  height: 12rem;
+  // }
 }
 
+.search-avatar-container {
+  @include flex(row, _, _);
+  // @include tablet {
+  //   @include flex(row, _, center);
+  // }
+}
 //`
