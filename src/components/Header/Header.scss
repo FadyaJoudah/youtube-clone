@@ -1,15 +1,37 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 .header {
-  // background-color: rgb(93, 93, 153);
   @include flex(column, _, center);
-  // @include tablet {
-  //   @include flex(row, _, center);
+  width: 100%;
+  @include tablet {
+    @include flex(row, space-between, center);
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 7rem;
+  }
+  @include desktop {
+    padding: 0 8rem;
+  }
   height: 12rem;
   &__search-avatar-container {
-    @include flex(row, _, _);
-    // @include tablet {
-    //   @include flex(row, _, center);
-    // }
+    @include flex(row, center, center);
+    flex-wrap: wrap;
+
+    @include pre-tablet {
+      @include flex(row, _, center);
+    }
+
+    @include tablet {
+      @include flex(row, _, center);
+      flex-wrap: nowrap;
+    }
+  }
+  &__avatar {
+    @include pre-tablet {
+      order: 1;
+    }
+    @include tablet {
+      order: 1;
+    }
   }
 }

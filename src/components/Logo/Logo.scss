@@ -10,5 +10,9 @@
   background-repeat: no-repeat;
   margin: 1rem 0 0 0;
   &__logo {
+    @include tablet {
+      width: 6rem;
+      height: 2rem;
+    }
   }
 }

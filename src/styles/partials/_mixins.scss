@@ -24,6 +24,13 @@
     @content;
   }
 }
+
+@mixin pre-tablet {
+  @media screen and (min-width: $pre-tablet) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (min-width: $tablet-breakpoint) {
     @content;

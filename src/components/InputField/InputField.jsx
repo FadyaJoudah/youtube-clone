@@ -1,16 +1,15 @@
 import "./InputField.scss";
 function InputField({ placeholder }) {
   return (
-    <form className="search-form" action="action_page.php">
+    <form className="form" action="action_page.php">
+      <i className="form__icon"></i>
       <input
         type="text"
         placeholder={placeholder}
         name="search"
-        className="search-input"
+        className="form__input"
       />
-      <button className="search-button" type="submit">
-        <i className=" fa fa-search"></i>
-      </button>
+      <button className="form__button" type="submit"></button>
     </form>
   );
 }

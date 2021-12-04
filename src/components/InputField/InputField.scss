@@ -1,34 +1,47 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-.search-form {
+.form {
   @include flex(_, _, center);
-  width: 15rem;
+  width: 16.5rem;
   height: 2.5rem;
   border-radius: 5px;
   border: 1px solid silver;
   background-color: $white;
-}
-.search-input {
-  font-size: 0.875rem;
-  background: none;
-  color: #5a6674;
-  width: 12.1875rem;
-  height: 1.25rem;
-  border: none;
-  appearance: none;
-  outline: none;
-
-  &::-webkit-search-cancel-button {
-    appearance: none;
+  @include pre-tablet {
+    margin: 0 0 0 0.8rem;
+    width: 12rem;
   }
-}
+  @include tablet {
+    margin: 0 1rem 0 0;
+    height: 3.3rem;
+    width: 13rem;
+  }
+  &__input {
+    font-size: 0.875rem;
+    background: none;
+    color: #5a6674;
+    width: 12.1875rem;
+    height: 1.25rem;
+    border: none;
+    appearance: none;
+    outline: none;
 
-.search-button {
-  height: 1.25rem;
-  width: 1.25rem;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none;
-  cursor: pointer;
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+  &__button {
+    height: 1.25rem;
+    width: 1.25rem;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__icon {
+    content: url("../../assets/Icons/search.svg");
+    padding: 0 0.3rem 0 0.6rem;
+  }
 }

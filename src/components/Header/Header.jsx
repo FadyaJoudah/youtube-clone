@@ -8,11 +8,15 @@ const Header = (props) => {
   return (
     <header className="header">
       <Logo href={""} />
+
       <div className="header__search-avatar-container">
-        <InputField placeholder="search..." />
-        <Avatar src={"../../assets/Images/Mohan-muruge.jpg"} alt={""} />
+        <InputField placeholder="search" />
+
+        <div className="header__avatar">
+          <Avatar src={".../../assets/Images/Mohan-muruge.jpg"} alt={""} />
+        </div>
+        <Button name={"UPLOAD"} />
       </div>
-      <Button name={"UPLOAD"} />
     </header>
   );
 };
