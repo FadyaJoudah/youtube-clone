@@ -1,0 +1,14 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typography" as *;
+.logo-container {
+  background-image: url(../../assets/Logo/BrainFlix-logo.svg);
+  width: 10rem;
+  height: 3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 1rem 0 0 0;
+  &__logo {
+  }
+}

@@ -1,0 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.header {
+  // background-color: rgb(93, 93, 153);
+  @include flex(column, center, _);
+  height: 18.75rem;
+}
+
+//`
