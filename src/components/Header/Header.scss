@@ -6,13 +6,10 @@
   // @include tablet {
   //   @include flex(row, _, center);
   height: 12rem;
-  // }
+  &__search-avatar-container {
+    @include flex(row, _, _);
+    // @include tablet {
+    //   @include flex(row, _, center);
+    // }
+  }
 }
-
-.search-avatar-container {
-  @include flex(row, _, _);
-  // @include tablet {
-  //   @include flex(row, _, center);
-  // }
-}
-//`

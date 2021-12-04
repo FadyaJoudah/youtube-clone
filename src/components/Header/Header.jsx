@@ -1,19 +1,18 @@
 import Avatar from "../Avatar/Avatar";
 import Logo from "../Logo/Logo";
 import "./Header.scss";
-import SearchBar from "../SearchBar/SearchBar";
-import UploadButton from "../UploadButton/UploadButton";
-
+import InputField from "../InputField/InputField";
+import Button from "../Button/Button";
 
 const Header = (props) => {
   return (
     <header className="header">
-      <Logo href={""}/>
-      <div className="search-avatar-container"> 
-      <SearchBar/>
-      <Avatar src={"../../assets/Images/Mohan-muruge.jpg" } alt={''}/>
+      <Logo href={""} />
+      <div className="header__search-avatar-container">
+        <InputField placeholder="search..." />
+        <Avatar src={"../../assets/Images/Mohan-muruge.jpg"} alt={""} />
       </div>
-      <UploadButton/>
+      <Button name={"UPLOAD"} />
     </header>
   );
 };
