@@ -27,6 +27,7 @@
     }
   }
   &__avatar {
+    margin: 0 0 0 1rem;
     @include pre-tablet {
       order: 1;
     }

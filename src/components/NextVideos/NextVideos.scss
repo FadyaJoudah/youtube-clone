@@ -1,0 +1,43 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typography" as *;
+
+.video-list {
+  &__title {
+    margin: 1rem 1.3rem;
+    font-weight: 700;
+    color: $silver;
+  }
+}
+
+.next-video {
+  @include flex(row, _, _);
+  margin: 0.8rem 0.5rem;
+  width: 100%;
+  &__thumbnail {
+    width: 7rem;
+    height: 6rem;
+    object-fit: cover;
+    border-radius: 0.2rem;
+    margin: 0.5rem 1rem 0.2rem;
+    @include tablet {
+      width: 10rem;
+    }
+    @include desktop {
+      width: 7rem;
+    }
+  }
+  &__details {
+    width: 70%;
+  }
+}
+
+.details {
+  width: 80%;
+  &__title {
+    font-weight: 700;
+  }
+  &__channel {
+  }
+}

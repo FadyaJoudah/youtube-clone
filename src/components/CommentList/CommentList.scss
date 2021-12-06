@@ -1,0 +1,55 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typography" as *;
+
+.comments {
+  width: 100%;
+  margin: 2rem;
+  @include flex(column, _, center);
+  width: 93%;
+  &__comment {
+    width: 100%;
+    border-bottom: 2px solid $mercury;
+    padding: 2rem 0 0 0;
+    @include flex(row, _, _);
+  }
+  &__info {
+    @include flex(row, space-between, _);
+    padding: 0.5rem;
+    width: 100%;
+  }
+  &__img {
+    margin: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__text {
+    margin: 0.5rem;
+  }
+
+  &__content {
+    width: 100%;
+  }
+  &__like-button {
+    margin: 0 2rem 0.5rem 0;
+    background-color: $white;
+    border: none;
+  }
+  &__delete-button {
+    margin: 0 2rem 0.5rem 0;
+    background-color: $white;
+    border: none;
+  }
+  &__name {
+    font-weight: 700;
+  }
+  &__section {
+    @include tablet {
+      margin: 0 0 0 1.5rem;
+    }
+  }
+}

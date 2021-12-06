@@ -3,8 +3,9 @@ import Logo from "../Logo/Logo";
 import "./Header.scss";
 import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
+import AvatarImage from "../../assets/Images/Mohan-muruge.jpg";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <header className="header">
       <Logo href={""} />
@@ -13,9 +14,9 @@ const Header = (props) => {
         <InputField placeholder="search" />
 
         <div className="header__avatar">
-          <Avatar src={".../../assets/Images/Mohan-muruge.jpg"} alt={""} />
+          <Avatar src={AvatarImage} alt={""} />
         </div>
-        <Button name={"UPLOAD"} />
+        <Button name={"UPLOAD"} type="input" />
       </div>
     </header>
   );

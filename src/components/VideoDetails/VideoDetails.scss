@@ -1,0 +1,77 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typography" as *;
+
+.video-details {
+  &__title {
+    margin: 1rem;
+    padding: 0 0 1rem 0;
+    @include text-settings(2rem, _, _);
+    border-bottom: 2px solid $mercury;
+    @include tablet {
+      border-bottom: none;
+      margin: 1rem 1rem 0 1.3rem;
+      padding: 0;
+    }
+  }
+  &__container {
+    @include flex(row, _, _);
+    margin: 0.5rem;
+    border-bottom: 2px solid $mercury;
+    padding: 0 0 1rem 0;
+
+    @include tablet {
+      @include flex(row, space-between, _);
+      padding: 0 0 0.5rem 0;
+    }
+  }
+
+  &__right {
+    margin: 0 0 0 4rem;
+  }
+  &__left {
+    margin: 0 0 0 1rem;
+    @include tablet {
+    }
+  }
+  &__like-icon {
+    content: url("../../assets/Icons/likes.svg");
+    padding: 0 0.8rem 0 0;
+  }
+  &__view-icon {
+    content: url("../../assets/Icons/views.svg");
+    padding: 0 0.5rem 0 0;
+  }
+  &__description {
+    margin: 1rem;
+    padding: 0 0 1rem 0;
+  }
+}
+
+.left {
+  @include tablet {
+    @include flex(row, space-between, _);
+    width: 14rem;
+  }
+  &__info {
+    margin: 0.5em 0 0 0;
+    color: $silver;
+
+    &--bold {
+      font-weight: 700;
+      color: black;
+      @include text-settings(1rem, _, _);
+    }
+  }
+}
+.right {
+  @include tablet {
+    @include flex(row, space-between, _);
+    width: 15rem;
+  }
+  &__info {
+    margin: 0.5rem 0 0 0;
+    color: $silver;
+  }
+}

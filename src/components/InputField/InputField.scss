@@ -1,5 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typography" as *;
 .form {
   @include flex(_, _, center);
   width: 16.5rem;

@@ -1,26 +1,16 @@
-// @font-face {
-//   font-family: "Avenir Next", "sans-serif";
-//   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"),
-//       url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"),
-//       url("../../assets/Font/Alternative/AvenirNextLTPro.ttf")
-//           format("truetype");
-//   font-weight: 400;
-//   font-style: normal;
-// };
+// Avenir Next Regular
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"),
+    url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"),
+    url("../../assets/Font/AvenirNextLTPro-Regular.ttf") format("truetype");
+}
 
-// //Avenir Next Regular
-// @font-face {
-//   font-family: "Avenir";
-//   src: url("../../assets/Font/AvenirNextLTPro-Regular.woff2") format("woff2"),
-//     url("../../assets/Font/AvenirNextLTPro-Regular.woff") format("woff"),
-//     url("../../assets/Font/AvenirNextLTPro-Regular.ttf ") format("truetype");
-// }
-
-// //Avenir Next Bold
-// @font-face {
-//   font-family: "Avenir";
-//   src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"),
-//     url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff"),
-//     url("../../assets/Font/AvenirNextLTPro-Bold.ttf") format("truetype");
-//   font-weight: 700;
-// }
+// Avenir Next Bold
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.woff2") format("woff2"),
+    url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("woff"),
+    url("../../assets/Font/AvenirNextLTPro-Bold.woff") format("truetype");
+  font-weight: 700;
+}

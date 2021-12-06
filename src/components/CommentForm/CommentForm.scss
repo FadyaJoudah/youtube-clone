@@ -1,0 +1,122 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/typography" as *;
+
+.comment-form {
+  @include flex(column, flex-start, _);
+  @include tablet {
+    width: 100%;
+    margin: 0 auto;
+  }
+  height: 100%;
+  &__img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 3rem 0 0 0;
+    padding: 0 0 0 0.5rem;
+    @include tablet {
+      padding-right: 2rem;
+      margin: 2.3rem 0 0 0;
+    }
+  }
+  &__heading {
+    margin: 1rem 0 0 1.5rem;
+    @include tablet {
+    }
+  }
+  &__avatar {
+    margin: 2.0625rem 0 0 1.5rem;
+    @include tablet {
+    }
+  }
+  &__text {
+    width: 100%;
+    height: 12rem;
+    background-color: $alabaster;
+    border-radius: 0.2rem;
+    border: 1px solid $silver;
+    background-color: $alabaster;
+    font-family: "Avenir";
+
+    @include tablet {
+      height: 3.5rem;
+      width: 28rem;
+    }
+  }
+  &__label {
+    color: $silver;
+    @include text-settings(0.8rem, _, _);
+    padding: 0 0 0.5rem 0;
+  }
+  &__input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    background-color: $alabaster;
+    border-radius: 0.2rem;
+    border: 1px solid $silver;
+
+    @include tablet {
+      height: 3rem;
+    }
+  }
+  &__wrapper {
+    width: 20rem;
+  }
+  &__container {
+    @include flex(row, _, _);
+    width: 100%;
+    border-bottom: 1px solid $silver;
+  }
+  &__section {
+    @include flex(column, flex-start, _);
+    width: 100%;
+    padding: 0.75rem 1.25rem;
+    margin: 8px 0;
+    box-sizing: border-box;
+    @include tablet {
+      margin: 0 0 0 1.5rem;
+      height: 10rem;
+    }
+  }
+}
+
+.comment-icon {
+  content: url(../../assets/Icons/add_comment.svg);
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 7%;
+}
+
+.button {
+  position: relative;
+  background-color: $brainFlix-Blue;
+  color: white;
+  height: 2.5rem;
+  width: 100%;
+  margin: 1rem 0 0 0;
+  border-radius: 0.2rem;
+  border: none;
+
+  @include text-settings(1rem, _, _);
+  @include tablet {
+    width: 11.25rem;
+    height: 3.5rem;
+    order: 1;
+    margin: 0 1rem;
+    @include flex(_, center, center);
+    align-self: flex-end;
+    text-align: center;
+  }
+}
+
+.wrapper {
+  @include tablet {
+    @include flex(row, _, center);
+    width: 100%;
+  }
+}
