@@ -4,31 +4,55 @@
 @use "../../styles/partials/typography" as *;
 
 .video-list {
+  border-top: 2px solid $mercury;
+  padding: 0.4rem 0 0 0;
   &__title {
     margin: 1rem 1.3rem;
     font-weight: 700;
-    color: $silver;
+    color: $mercury;
+  }
+  @include tablet {
+    padding: 1.5rem 0 0 0;
+  }
+  @include desktop {
+    border: none;
   }
 }
 
 .next-video {
-  @include flex(row, _, _);
   margin: 0.8rem 0.5rem;
   width: 100%;
-  &__thumbnail {
-    width: 7rem;
+  height: 4rem;
+  @include flex(row, _, _);
+  @include tablet {
     height: 6rem;
-    object-fit: cover;
-    border-radius: 0.2rem;
-    margin: 0.5rem 1rem 0.2rem;
+  }
+
+  &__thumbnail-container {
+    width: 30%;
     @include tablet {
-      width: 10rem;
+      margin: 0.5rem 1rem 0.2rem;
     }
     @include desktop {
-      width: 7rem;
+      margin: 0.5rem 1rem 0.2rem;
+
+      width: 49%;
     }
   }
+
+  &__thumbnail {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.3rem;
+    object-fit: cover;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
   &__details {
+    margin: 0 0 0 1rem;
     width: 70%;
   }
 }
@@ -37,7 +61,5 @@
   width: 80%;
   &__title {
     font-weight: 700;
-  }
-  &__channel {
   }
 }

@@ -4,6 +4,7 @@
 @use "../../styles/partials/typography" as *;
 
 .comment-form {
+  height: 120;
   @include flex(column, flex-start, _);
   @include tablet {
     width: 100%;
@@ -19,7 +20,7 @@
     padding: 0 0 0 0.5rem;
     @include tablet {
       padding-right: 2rem;
-      margin: 2.3rem 0 0 0;
+      margin: 2.3rem 0 0 1.5rem;
     }
   }
   &__heading {
@@ -42,7 +43,8 @@
     font-family: "Avenir";
 
     @include tablet {
-      height: 3.5rem;
+      margin: 0 0 0 1.25rem;
+      height: 3rem;
       width: 28rem;
     }
   }
@@ -50,6 +52,9 @@
     color: $silver;
     @include text-settings(0.8rem, _, _);
     padding: 0 0 0.5rem 0;
+    @include tablet {
+      margin: 0 0 0 1.5rem;
+    }
   }
   &__input {
     width: 100%;
@@ -69,7 +74,7 @@
   &__container {
     @include flex(row, _, _);
     width: 100%;
-    border-bottom: 1px solid $silver;
+    // border-bottom: 1px solid $silver;
   }
   &__section {
     @include flex(column, flex-start, _);
@@ -78,8 +83,10 @@
     margin: 8px 0;
     box-sizing: border-box;
     @include tablet {
+      // background-color: red;
+      padding: 0.75rem 5.4rem 2rem 0;
       margin: 0 0 0 1.5rem;
-      height: 10rem;
+      height: 8rem;
     }
   }
 }
@@ -105,7 +112,7 @@
   @include text-settings(1rem, _, _);
   @include tablet {
     width: 11.25rem;
-    height: 3.5rem;
+    height: 3rem;
     order: 1;
     margin: 0 1rem;
     @include flex(_, center, center);

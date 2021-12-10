@@ -8,7 +8,7 @@ import AvatarImage from "../../assets/Images/Mohan-muruge.jpg";
 const Header = () => {
   return (
     <header className="header">
-      <Logo href={""} />
+      <Logo href={"/"} />
 
       <div className="header__search-avatar-container">
         <InputField placeholder="search" />

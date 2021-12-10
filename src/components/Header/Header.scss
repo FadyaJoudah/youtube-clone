@@ -1,18 +1,21 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 .header {
+  height: 12rem;
   @include flex(column, _, center);
   width: 100%;
+
   @include tablet {
     @include flex(row, space-between, center);
     width: 100%;
     padding: 0 1.5rem;
     height: 7rem;
   }
+
   @include desktop {
     padding: 0 8rem;
   }
-  height: 12rem;
+
   &__search-avatar-container {
     @include flex(row, center, center);
     flex-wrap: wrap;
@@ -26,6 +29,7 @@
       flex-wrap: nowrap;
     }
   }
+
   &__avatar {
     margin: 0 0 0 1rem;
     @include pre-tablet {

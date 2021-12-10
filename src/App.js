@@ -9,9 +9,19 @@ import { videoData, videoList } from "./assets/data/video-data";
 
 class App extends Component {
   state = {
+    videoData,
     currentVideo: videoData[0],
-    currentComment: videoData[0].comments,
+
     videoList: videoList,
+  };
+
+  onVidClick = (video) => {
+    const { id } = video;
+    videoData.forEach((video) => {
+      if (id === video.id) {
+        this.setState({ currentVideo: video });
+      }
+    });
   };
 
   render() {
@@ -22,8 +32,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <MainVideo src={""} poster={this.state.currentVideo.image} />
-        <div className="details-container">
-          <div>
+        <div className="container">
+          <div className="container__details">
             <VideoDetails
               title={this.state.currentVideo.title}
               channel={this.state.currentVideo.channel}
@@ -32,9 +42,12 @@ class App extends Component {
               views={this.state.currentVideo.views}
               description={this.state.currentVideo.description}
             />
-            <CommentSection commentsData={this.state.currentComment} />
+            <CommentSection commentsData={this.state.currentVideo.comments} />
           </div>
-          <NextVideos videoList={filteredVideoList} />
+          <NextVideos
+            videoList={filteredVideoList}
+            onVideoClick={this.onVidClick}
+          />
         </div>
       </div>
     );

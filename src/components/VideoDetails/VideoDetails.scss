@@ -46,6 +46,7 @@
   &__description {
     margin: 1rem;
     padding: 0 0 1rem 0;
+    @include text-settings(_, 1.5, _);
   }
 }
 
