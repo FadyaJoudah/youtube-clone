@@ -2,20 +2,3 @@
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/global" as *;
 @use "./styles/partials/typography" as *;
-.container {
-  @include tablet {
-    width: 90%;
-    margin: 0 auto;
-  }
-  @include desktop {
-    width: 90%;
-    margin: 0 auto;
-    @include flex(row, _, _);
-  }
-  &__details {
-    @include desktop {
-      width: 70%;
-      border-right: 2px solid $mercury;
-    }
-  }
-}
