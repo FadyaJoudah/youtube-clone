@@ -9,18 +9,32 @@
   @include flex(column, _, flex-start);
   width: 100%;
   background-color: $white;
-  &____title-label {
+  &__title-container {
+    width: 85%;
+    margin: 0 auto;
   }
-  &____title-input {
-    width: 50rem;
-    height: 5rem;
+  &__title-label {
+    color: $silver;
+  }
+  &__title-input {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+  }
+
+  &__description-container {
+    width: 85%;
     margin: 0 auto;
   }
 
-  &____description-label {
+  &__description-label {
+    color: $silver;
   }
 
-  &____description-input {
+  &__description-input {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
   }
 }
 .publish__icon {
@@ -37,8 +51,9 @@
 
 .cancel-button {
   width: 100%;
+  // background-color: red;
   margin: 0 auto;
-  padding: 1rem 0 0 0;
+  padding: 1rem 0;
   color: $brainFlix-Blue;
   background-color: white;
   border: none;
