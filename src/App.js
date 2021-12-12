@@ -1,4 +1,5 @@
 import "./App.scss";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Upload from "./pages/Upload/Upload";
 import MainVideoPage from "./pages/MainVideoPage/MainVideoPage";
 import {

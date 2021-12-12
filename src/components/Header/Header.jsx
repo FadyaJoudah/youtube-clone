@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
-    console.log("headers", this.props);
     return (
       <header className="header">
         <Link to="/">

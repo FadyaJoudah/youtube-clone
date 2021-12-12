@@ -2,8 +2,6 @@ import "./Upload.scss";
 import Header from "../../components/Header/Header";
 import React, { Component } from "react";
 import Button from "../../components/Button/Button";
-import { render } from "@testing-library/react";
-import axios from "axios";
 import uploadVideo from "../../assets/Images/Upload-video-preview.jpg";
 
 class Upload extends Component {
@@ -13,14 +11,18 @@ class Upload extends Component {
     selectedFile: null,
   };
   handleTitleChange = (event) => {
-    this.setSate({
+    this.setState({
       title: event.target.value,
     });
   };
   handleDescriptionChange = (event) => {
-    this.setSate({
+    this.setState({
       description: event.target.value,
     });
+  };
+  handelPublishClick = () => {
+    alert("video uploaded successfully!!");
+    this.props.history.push("/");
   };
 
   render() {
@@ -33,7 +35,7 @@ class Upload extends Component {
             <p className=" thumbnail-title"> VIDEO THUMBNAIL</p>
             <img
               src={uploadVideo}
-              alt={"thumbnail"}
+              alt="thumbnail"
               className="thumbnail-photo"
             />
           </div>
@@ -48,6 +50,7 @@ class Upload extends Component {
                 id="title"
                 name="title"
                 placeholder="Add a title to your video"
+                onChange={this.handleTitleChange}
               ></input>
             </div>
             <div className="upload-form__description-container">
@@ -63,6 +66,7 @@ class Upload extends Component {
                 id="description"
                 name="description"
                 placeholder="Add a description to your video"
+                onChange={this.handleDescriptionChange}
               ></textarea>
             </div>
           </div>
@@ -72,6 +76,7 @@ class Upload extends Component {
             type="input"
             name="PUBLISH"
             icon={<i className="publish__icon"></i>}
+            onClick={this.handelPublishClick}
           />
           <button className="cancel-button">CANCEL</button>
         </div>
@@ -79,49 +84,5 @@ class Upload extends Component {
     );
   }
 }
-
-// function Upload({ src, alt }) {
-//   return (
-//     <>
-//       <Header />
-// <h1 className="upload-title">Upload Video</h1>
-// <div className="thumbnail-container">
-//   <p> VIDEO THUMBNAIL</p>
-//   <img src={src} alt={alt} />
-// </div>
-//       <form action="/action_page.php" method="get" className="upload-form">
-// <div className="upload-form__title-container">
-//   <label htmlFor="title" className="upload-form__title-label">
-//     TITLE YOUR VIDEO
-//   </label>
-//   <input
-//     className="upload-form__title-input"
-//     type="text"
-//     id="title"
-//     name="title"
-//   ></input>
-// </div>
-// <div className="upload-form__description-container">
-//   <label
-//     className="upload-form__description-label"
-//     htmlFor="description"
-//   >
-//     ADD A VIDEO DESCRIPTION
-//   </label>
-//   <input
-//     className="upload-form__description-input"
-//     type="text"
-//     id="description"
-//     name="description"
-//   ></input>
-// </div>
-//         <div className="button-container">
-//           <Button name="PUBLISH" icon={<i className="publish__icon"></i>} />
-//           <button className="cancel-button">CANCEL</button>
-//         </div>
-//       </form>
-//     </>
-//   );
-// }
 
 export default Upload;

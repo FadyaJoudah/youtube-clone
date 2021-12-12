@@ -6,29 +6,30 @@ import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import "./MainVideoPage.scss";
 import axios from "axios";
+import Loader from "react-loader-spinner";
 
 const API_KEY = "b675be31-ede5-4d83-b18a-7009e9ab0578";
 class MainVideoPage extends Component {
   state = {
     currentVideo: null,
-
     videoList: [],
   };
 
   componentDidMount() {
+    // getting the video list from the API and set the new data update the state
     axios
       .get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`)
       .then((listResponse) => {
         const videoList = listResponse.data;
         const firstVid = videoList[0];
         let videoID = firstVid.id;
-        console.log(this.props.match.params.id);
 
+        // this if statement takes the video Id from the parameters and set it to the variable that originally has the default video Id
         if (this.props.match.params.id) {
           videoID = this.props.match.params.id;
         }
-        console.log("nunu");
 
+        // takes the id available in videoID to make a get request to display that video with the same id
         this.getMainVideo(videoID);
         this.setState({ videoList: listResponse.data });
       })
@@ -36,7 +37,7 @@ class MainVideoPage extends Component {
         console.alert("Failed to get video!");
       });
   }
-
+  //this function takes an Id as a parameter to make a get request
   getMainVideo = (id) => {
     axios
       .get(
@@ -49,18 +50,34 @@ class MainVideoPage extends Component {
         console.alert("Failed to load");
       });
   };
+
+  // when clickimg any video from the video list it passed the id to the function to display it as a main video
   onVidClick = (video) => {
     const { id } = video;
     this.getMainVideo(id);
   };
+  // takes th user to the upload page when clicking the upload button
   handleOnUploadClick = () => {
     this.props.history.push("/upload");
   };
 
   render() {
-    console.log(this.state.videoList);
+    // in case there's ta delay in the get request this if statement displays some of the page and a spinner
     if (!this.state.currentVideo) {
-      return <div> loading</div>;
+      return (
+        <>
+          <Header onUploadClick={this.handleOnUploadClick} />
+          <div className="spinner-container">
+            <Loader
+              type="Puff"
+              color="#0095FF"
+              height={100}
+              width={100}
+              timeout={3000} //3 secs
+            />
+          </div>
+        </>
+      );
     }
     const filteredVideoList = this.state.videoList.filter((video) => {
       return this.state.currentVideo.id !== video.id;
