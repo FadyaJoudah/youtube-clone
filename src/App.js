@@ -7,17 +7,15 @@ import {
   Route,
   // Redirect,
 } from "react-router-dom";
+import MainVideo from "./components/MainVideo/MainVideo";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact>
-          <MainVideoPage />
-        </Route>
-        <Route path="/upload">
-          <Upload />
-        </Route>
+        <Route path="/" exact component={MainVideoPage} />
+        <Route path="/upload" exact component={Upload} />
+        <Route path="/video/:id" exact component={MainVideoPage} />
       </Switch>
     </Router>
   );

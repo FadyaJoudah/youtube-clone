@@ -1,12 +1,7 @@
-import "./Logo.scss"
+import "./Logo.scss";
 
-function Logo ({href}){
- return(
-   <div className="logo-container">
-     <a href={href} className="logo-container__logo">
-  </a>
-   </div>
- )
+function Logo() {
+  return <div className="logo-container"></div>;
 }
 
 export default Logo;

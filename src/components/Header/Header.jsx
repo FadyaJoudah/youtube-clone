@@ -1,25 +1,36 @@
+import react, { Component } from "react";
 import Avatar from "../Avatar/Avatar";
 import Logo from "../Logo/Logo";
 import "./Header.scss";
 import InputField from "../InputField/InputField";
 import Button from "../Button/Button";
 import AvatarImage from "../../assets/Images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  return (
-    <header className="header">
-      <Logo href={"/"} />
+class Header extends Component {
+  render() {
+    console.log("headers", this.props);
+    return (
+      <header className="header">
+        <Link to="/">
+          <Logo />
+        </Link>
+        <div className="header__search-avatar-container">
+          <InputField placeholder="search" />
 
-      <div className="header__search-avatar-container">
-        <InputField placeholder="search" />
+          <div className="header__avatar">
+            <Avatar src={AvatarImage} alt={""} />
+          </div>
 
-        <div className="header__avatar">
-          <Avatar src={AvatarImage} alt={""} />
+          <Button
+            name={"UPLOAD"}
+            type="input"
+            onClick={this.props.onUploadClick}
+          />
         </div>
-        <Button name={"UPLOAD"} type="input" />
-      </div>
-    </header>
-  );
-};
+      </header>
+    );
+  }
+}
 
 export default Header;
