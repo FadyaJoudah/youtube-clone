@@ -74,7 +74,6 @@
   &__container {
     @include flex(row, _, _);
     width: 100%;
-    // border-bottom: 1px solid $silver;
   }
   &__section {
     @include flex(column, flex-start, _);
@@ -83,7 +82,6 @@
     margin: 8px 0;
     box-sizing: border-box;
     @include tablet {
-      // background-color: red;
       padding: 0.75rem 5.4rem 2rem 0;
       margin: 0 0 0 1.5rem;
       height: 8rem;

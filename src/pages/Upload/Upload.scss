@@ -104,6 +104,9 @@
   width: 85%;
   height: 10rem;
   margin: 0 auto;
+  @include pre-tablet {
+    @include flex(row, _, _);
+  }
   @include tablet {
     @include flex(_, _, _);
   }
@@ -115,13 +118,17 @@
 }
 
 .cancel-button {
-  width: 100%;
+  width: 24em;
   height: 3.5rem;
   margin: 0 auto;
   padding: 1rem 0;
   color: $brainFlix-Blue;
   background-color: white;
   border: none;
+  @include pre-tablet {
+    width: 12rem;
+    order: -1;
+  }
   @include tablet {
     width: 20%;
     order: -1;

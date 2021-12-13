@@ -3,12 +3,12 @@ import "./CommentList.scss";
 function CommentsList({ comments }) {
   return (
     <section className="comments">
-      {comments.map((comment, index) => {
+      {comments.map((comment) => {
         const commentTime = new Date(comment.timestamp).toLocaleDateString(
           "en-US"
         );
         return (
-          <article key={index} className="comments__comment comment">
+          <article key={comment.id} className="comments__comment comment">
             <Avatar />
             <div className="comments__content">
               <div className="comments__info">
