@@ -1,4 +1,4 @@
-import react, { Component } from "react";
+import { Component } from "react";
 import Avatar from "../Avatar/Avatar";
 import Logo from "../Logo/Logo";
 import "./Header.scss";

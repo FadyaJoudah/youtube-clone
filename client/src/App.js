@@ -2,13 +2,7 @@ import "./App.scss";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Upload from "./pages/Upload/Upload";
 import MainVideoPage from "./pages/MainVideoPage/MainVideoPage";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  // Redirect,
-} from "react-router-dom";
-import MainVideo from "./components/MainVideo/MainVideo";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (

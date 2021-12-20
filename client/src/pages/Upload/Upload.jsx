@@ -2,6 +2,7 @@ import "./Upload.scss";
 import Header from "../../components/Header/Header";
 import React, { Component } from "react";
 import Button from "../../components/Button/Button";
+import axios from "axios";
 import uploadVideo from "../../assets/Images/Upload-video-preview.jpg";
 
 class Upload extends Component {
@@ -10,6 +11,7 @@ class Upload extends Component {
     description: "",
     selectedFile: null,
   };
+
   handleTitleChange = (event) => {
     this.setState({
       title: event.target.value,
@@ -20,9 +22,24 @@ class Upload extends Component {
       description: event.target.value,
     });
   };
+
   handelPublishClick = () => {
-    alert("video uploaded successfully!!");
-    this.props.history.push("/");
+    if (this.state.title && this.state.description) {
+      axios
+        .post("http://localhost:8080/videos", {
+          title: this.state.title,
+          description: this.state.description,
+        })
+        .then((response) => {
+          console.log(response);
+          this.props.history.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      alert("enter title and description");
+    }
   };
 
   render() {
@@ -73,7 +90,7 @@ class Upload extends Component {
         </div>
         <div className="button-container">
           <Button
-            type="input"
+            type="file"
             name="PUBLISH"
             icon={<i className="publish__icon"></i>}
             onClick={this.handelPublishClick}

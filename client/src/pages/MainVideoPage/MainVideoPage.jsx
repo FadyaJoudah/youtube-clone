@@ -8,7 +8,6 @@ import "./MainVideoPage.scss";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 
-const API_KEY = "b675be31-ede5-4d83-b18a-7009e9ab0578";
 class MainVideoPage extends Component {
   state = {
     currentVideo: null,
@@ -18,7 +17,7 @@ class MainVideoPage extends Component {
   componentDidMount() {
     // getting the video list from the API and set the new data update the state
     axios
-      .get(`https://project-2-api.herokuapp.com/videos?api_key=${API_KEY}`)
+      .get(`http://localhost:8080/videos`)
       .then((listResponse) => {
         const videoList = listResponse.data;
         const firstVid = videoList[0];
@@ -34,15 +33,13 @@ class MainVideoPage extends Component {
         this.setState({ videoList: listResponse.data });
       })
       .catch((err) => {
-        console.alert("Failed to get video!");
+        alert("Failed to get video!");
       });
   }
   //this function takes an Id as a parameter to make a get request
   getMainVideo = (id) => {
     axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${id}?api_key=${API_KEY}`
-      )
+      .get(`http://localhost:8080/videos/${id}`)
       .then((vidResponse) => {
         this.setState({ currentVideo: vidResponse.data });
       })
